@@ -49,19 +49,19 @@ Running Things in docker
 -to make a container sleep for a certain duration
   docker run --rm -ti ubuntu sleep 5
  **docker run -ti bash -c "sleep 3; echo all done"
--running stuff in detached mode
+1. running stuff in detached mode
  docker run -d -ti ubuntu bash
--running stuff to be attached to the Terminal
+2. running stuff to be attached to the Terminal
  docker attach “name of the container”
--detach but keep container running
+3.detach but keep container running
 Ctrl + p, Ctrl + q
--container is running, but you want to add another process to the running container
+4. container is running, but you want to add another process to the running container
 docker exec -ti  nervous_zhukovsky bash
--to log container output
+5. to log container output
  docker logs “container_name”
--To kill a container
+6. To kill a container
  docker kill “container-name”
--to remove a container
+7. to remove a container
  docker rm “container_name”
 
 NB:To limit memory that a container can take
@@ -80,26 +80,26 @@ Exposing Container ports
 
 
 **Nb:
--To list all docker images
+1. To list all docker images
  docker images
 -ti => terminal interactive i.e
 docker run -ti
--to run the latest image
+2. to run the latest image
  docker run -ti ubuntu:latest
--to list running containers
+2. to list running containers
  docker ps
--to commit a new image
+3. to commit a new image
  docker commit “original name” “new-name”
--to list all containers
+4. to list all containers
  docker ps -all
--To see the last exited container
+5. To see the last exited container
  docker ps -l
 -Files created in one container, stay in that container. They don’t move to another container
 
 Nb:
--to list stuff in Linux:
+1. to list stuff in Linux:
  ls
--To create a blank file in linux
+2. To create a blank file in linux
  touch
 
 Tagging new images structure
@@ -109,10 +109,10 @@ Cleaning up images.
 -docker rmi image-name:tag
 -docker rmi image-id
 
-Docker volumes:
+# Docker volumes:
 -Types of docker volumes
-i)persistent
-ii)Ephemeral - exist as long as the container is using them
+1. persistent
+2. Ephemeral - exist as long as the container is using them
 
 **Docker Architecture**
     Docker client
@@ -136,70 +136,70 @@ Docker Daemon | Docker Engine => This is where the commands are executed
 Cloud Infrastructure
 
 # Playing around with Docker Images    
--Listing all available images
+1. Listing all available images
 docker images
--Tagging images
+2. Tagging images
     docker tag repo-name:tag  (you can even give more than one tag to an image)  eg docker tag repo-name:original-tag  docker tag repo-name:new-tag 
 
-- Pulling an image from docker hub: (just downloads the images from docker hub, does not run it) 
+3. Pulling an image from docker hub: (just downloads the images from docker hub, does not run it) 
 docker pull image-name 
-- To download and run use : 
+4. To download and run use : 
     docker run image-name
 (first checks if the image is available in the local repo, if not it downloads it from docker hub)
--To Search images, use 
+5. To Search images, use 
     docker search image-name
--To look at the history of an image: (shows steps involved in creating an image)
+6. To look at the history of an image: (shows steps involved in creating an image)
     docker image history image-id or
     docker image history repo-name:tag
--To inspect an image
+7. To inspect an image
     docker image inspect image-id
--To remove an image from the local repo
+8. To remove an image from the local repo
     docker image remove image-Id
 
 # Playing with docker containers 
--To list  running containers: 
+1. To list  running containers: 
     docker container ls
--To list all containers
+2. To list all containers
     docker container ls -a
--To create a docker container: 
+3. To create a docker container: 
     run  the image i.e
-    docker run -p host-port-number:docker-port repo-name:tag eg
-    docker run -p 5000:5000 -d  in28minutes/todo-rest-api:latest or 
-    docker run -p 8000:8000 -d melvinkimathi/spring-boot-app:1.0.0.RELEASE
--To pause a container: 
+    - docker run -p host-port-number:docker-port repo-name:tag eg
+    - docker run -p 5000:5000 -d  in28minutes/todo-rest-api:latest or 
+    - docker run -p 8000:8000 -d melvinkimathi/spring-boot-app:1.0.0.RELEASE
+4. To pause a container: 
     docker container pause image-ID
--To unpause a specific container: 
+5. To unpause a specific container: 
     docker container unpause image-ID
--To display logs of a specific container: 
+6. To display logs of a specific container: 
     docker logs -f image-ID 
--To stop a running container --- gracefully shuts down a container
+7. To stop a running container --- gracefully shuts down a container
     docker container stop image-ID 
--To inspect a container
+8. To inspect a container
     docker container inspect image-ID  
--To remove all stopped containers
+9. To remove all stopped containers
     docker container prune
--To kill a running container: 
+10. To kill a running container: 
     docker container kill image-ID
--To create a restart policy 
+11. To create a restart policy 
     (if set to always, if docker desktop starts the container automatically restarts)
     (very useful when dealing with things like databases) - to ensure they are always up and running
-    docker run -p host-port:container-port -d --restart=always repo-name:tag eg 
-    docker run -p 5000:5000 -d --restart=always in28min/todo-rest-api-h2:1.0.0.1
-    docker run -p 5000:5000 -d --restart=no in28min/todo-rest-api-h2:1.0.0.1
+    - docker run -p host-port:container-port -d --restart=always repo-name:tag eg 
+    - docker run -p 5000:5000 -d --restart=always in28min/todo-rest-api-h2:1.0.0.1
+    - docker run -p 5000:5000 -d --restart=no in28min/todo-rest-api-h2:1.0.0.1
 NB: 
-The difference between docker stop and docker kill is that, docker stop gracefully shuts-down a container (allows running processes to terminate successfully), while docker kill stops the container immediately
-To list all events happening with Docker: 
+**The difference between docker stop and docker kill is that, docker stop gracefully shuts-down a container (allows running processes to terminate successfully), while docker kill stops the container immediately**
+- To list all events happening with Docker: 
 docker events
-To show all starts regarding a specific container
+- To show all starts regarding a specific container
 docker stats image-ID
-To specify the memory  and cpu limits in your containers:
+- To specify the memory  and cpu limits in your containers:
 docker run -p 5000:5000 -d -m 512m --cpu-quota 5000 repo-name:tag
 -m (memory limit)
 --cpu (cpu quota limit) 
 5000/100000 = 5%
-To check the top process running in a specific container: 
+- To check the top process running in a specific container: 
 docker top image-ID
-Lists all the different things being managed by Docker Daemon
+- Lists all the different things being managed by Docker Daemon
 docker system df
 
         
