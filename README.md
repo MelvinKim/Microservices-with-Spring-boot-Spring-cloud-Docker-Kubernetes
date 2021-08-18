@@ -81,20 +81,20 @@ Exposing Container ports
 
 **Nb:
 1. To list all docker images
- docker images
--ti => terminal interactive i.e
-docker run -ti
+ - docker images
+- ti => terminal interactive i.e
+- docker run -ti
 2. to run the latest image
- docker run -ti ubuntu:latest
+ - docker run -ti ubuntu:latest
 2. to list running containers
- docker ps
+ - docker ps
 3. to commit a new image
- docker commit “original name” “new-name”
+ - docker commit “original name” “new-name”
 4. to list all containers
- docker ps -all
+ - docker ps -all
 5. To see the last exited container
- docker ps -l
--Files created in one container, stay in that container. They don’t move to another container
+ - docker ps -l
+- Files created in one container, stay in that container. They don’t move to another container
 
 Nb:
 1. to list stuff in Linux:
