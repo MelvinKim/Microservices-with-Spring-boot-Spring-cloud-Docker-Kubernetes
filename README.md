@@ -1,4 +1,5 @@
-# Architectural diagram
+# Architectural diagram # 
+**This is a project in progress, will integrate kubernetes soon**
 <img src="https://res.cloudinary.com/dyjp6vejk/image/upload/v1629285029/sample-pic_itupeu.png" />
 
 
