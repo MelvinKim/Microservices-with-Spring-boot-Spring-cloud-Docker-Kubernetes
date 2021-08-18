@@ -4,39 +4,39 @@ This repo demonstrates how to create microservices using Spring boot, Spring clo
 
 # Building Microservices with spring boot 
 # Microservices: 
-Small autonomous services that work together, communicate via REST
-Exposed by REST
-Small well chosen deployable Units
-Cloud Enabled
-You can have multiple instances of each microservice
+- Small autonomous services that work together, communicate via REST
+- Exposed by REST
+- Small well chosen deployable Units
+- Cloud Enabled
+- You can have multiple instances of each microservice
 
 # Challenges with microservices: 
-Boundary context
-Configuration management
-Solved by spring cloud config server
-Dynamic scale up and scale down
-Solved by Eureka(registering and discovering microservices)  server, Ribbon(Client Side Load Balancing), Feign
-Identifying bugs in microservices, in which microservice did the bug occur? ...logging can help here
-Solved by Zipkin Distributed Tracing, Netflix API Gateway
-Fault Tolerance
-Solved by Hystrix
+- Boundary context
+- Configuration management
+- Solved by spring cloud config server
+- Dynamic scale up and scale down
+- Solved by Eureka(registering and discovering microservices)  server, Ribbon(Client Side Load Balancing), Feign
+- Identifying bugs in microservices, in which microservice did the bug occur? ...logging can help here
+- Solved by Zipkin Distributed Tracing, Netflix API Gateway
+- Fault Tolerance
+- Solved by Hystrix
 
 
 # Advantages of Microservices: 
-Easy adaptation to new technologies and processes
-Dynamic scaling
-Faster release cycles, because you are developing smaller components
+- Easy adaptation to new technologies and processes
+- Dynamic scaling
+- Faster release cycles, because you are developing smaller components
 
 
 # How to configure properties using “application.properties” file 
-Type the properties in the “application.properties” file
-Create a configuration class; do not forget the two annotations
-Inject the Configuration class in the controller; do not forget to Autowire it
+- Type the properties in the “application.properties” file
+- Create a configuration class; do not forget the two annotations
+- Inject the Configuration class in the controller; do not forget to Autowire it
 
 ## Docker
 Docker:
--self contained unit of software
--contains everything required to run code eg code, OS, networking required, processes, dependencies
+- self contained unit of software
+- contains everything required to run code eg code, OS, networking required, processes, dependencies
 
 # Docker Flow: 
 Image = docker run  =>  Running container  ⇒ stopped container  =  docker commit ⇒ new-image ==  docker tag “image-ID” “new-name”  => give the new image a new name
