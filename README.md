@@ -1,3 +1,7 @@
+# Architectural diagram
+<img src="https://res.cloudinary.com/dyjp6vejk/image/upload/v1629285029/sample-pic_itupeu.png" />
+
+
 # Microservices-with-Spring-boot-Spring-cloud-Dokcker-Kubernetes
 This repo demonstrates how to create microservices using:
 - Spring boot
