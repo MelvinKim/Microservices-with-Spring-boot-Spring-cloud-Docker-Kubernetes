@@ -44,16 +44,16 @@ Image = docker run  =>  Running container  ⇒ stopped container  =  docker comm
 **docker container exit codes
 
 Running Things in docker
--running a container but you don’t want to keep it afterwards, deleting the container once it exits
+- running a container but you don’t want to keep it afterwards, deleting the container once it exits
  docker run --rm -ti ubuntu 
--to make a container sleep for a certain duration
+- to make a container sleep for a certain duration
   docker run --rm -ti ubuntu sleep 5
  **docker run -ti bash -c "sleep 3; echo all done"
 1. running stuff in detached mode
  docker run -d -ti ubuntu bash
 2. running stuff to be attached to the Terminal
  docker attach “name of the container”
-3.detach but keep container running
+3. detach but keep container running
 Ctrl + p, Ctrl + q
 4. container is running, but you want to add another process to the running container
 docker exec -ti  nervous_zhukovsky bash
@@ -64,9 +64,9 @@ docker exec -ti  nervous_zhukovsky bash
 7. to remove a container
  docker rm “container_name”
 
-NB:To limit memory that a container can take
+- NB:To limit memory that a container can take
  docker run --memory “maximum-allowed-memory” “image-name” command
-NB:To limit CPU time that a container can take
+- NB:To limit CPU time that a container can take
  docker run --cpu-shares relative to other containers
  docker run --cpu-quota to limit it in general
 
